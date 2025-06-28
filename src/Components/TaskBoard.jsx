@@ -1,12 +1,11 @@
 import React from "react";
+import SearchBar from "./SearchBar";
 
 function TaskBoard() {
   return (
-    <div>
-      <section className="p-8 ">
-        <h3 className="text-lg">Task Board</h3>
-      </section>
-    </div>
+    <>
+      <SearchBar />
+    </>
   );
 }
 
