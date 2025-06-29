@@ -18,7 +18,7 @@ const handleAddTask = () => {
        {showModal && <AddTaskModal/> }
       <div className="space-y-4">
         <SearchBar />
-        <TaskAction onAddClick ={handleAddTask} />
+        <TaskAction onAddTask ={handleAddTask} />
         <TaskList tasks={tasks} />
       </div>
     </div>
