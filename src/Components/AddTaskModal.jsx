@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 function AddTaskModal() {
+  const [task, setTask] = useState({
+    title : "",
+    description : "",
+    tags : [], 
+    priority : "",
+    isFavorite : false,
+  })
+
+  const handleChange = (e) => {
+      const name = e.target.name;
+      let value = e.target.value;
+
+      setTask({
+          ...task,
+        [name] : value
+      })
+  }
+
   return (
     <>
   {/* Overlay */}
@@ -21,6 +39,8 @@ function AddTaskModal() {
             type="text"
             name="title"
             id="title"
+            value={task.title}
+            onChange={handleChange}
             required
           />
         </div>
@@ -31,6 +51,8 @@ function AddTaskModal() {
             className="block min-h-[120px] w-full rounded-md bg-[#2D323F] px-3 py-2.5 lg:min-h-[180px]"
             name="description"
             id="description"
+            value={task.description}
+            onChange={handleChange}
             required
           ></textarea>
         </div>
@@ -43,6 +65,8 @@ function AddTaskModal() {
               type="text"
               name="tags"
               id="tags"
+              value={task.tags}
+              onChange={handleChange}
               required
             />
           </div>
@@ -53,6 +77,8 @@ function AddTaskModal() {
               className="block w-full cursor-pointer rounded-md bg-[#2D323F] px-3 py-2.5"
               name="priority"
               id="priority"
+              value={task.priority}
+              onChange={handleChange}
               required
             >
               <option value="">Select Priority</option>

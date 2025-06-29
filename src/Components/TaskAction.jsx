@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TaskAction({onAddTask}) {
+function TaskAction({onAddClick}) {
  
   return (
     <div className="w-full flex flex-col md:flex-row justify-between gap-4 py-4 md:py-6 px-4 text-white">
@@ -9,7 +9,7 @@ function TaskAction({onAddTask}) {
       </div>
       <div className="flex flex-wrap justify-start md:justify-end items-center gap-2 md:gap-4 text-sm">
         <button 
-        onClick={onAddTask}
+        onClick={onAddClick}
         className="bg-[#3B82F6] hover:bg-blue-600 text-white py-1 px-3 rounded-md transition-colors duration-200">
           Add Task
         </button>
