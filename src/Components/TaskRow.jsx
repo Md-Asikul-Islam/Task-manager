@@ -43,7 +43,9 @@ function TaskRow({ tasks }) {
           <td className="px-2 py-3 sm:px-4 sm:py-4 align-top">
             <div className="flex flex-col sm:flex-row gap-1 sm:gap-3">
               <button className="text-red-500 hover:underline text-xs sm:text-sm">Delete</button>
-              <button className="text-blue-500 hover:underline text-xs sm:text-sm">Edit</button>
+              <button  className="text-blue-500 hover:underline text-xs sm:text-sm"
+               onClick={()=> onEdit(task)}
+              >Edit</button>
             </div>
           </td>
         </tr>
