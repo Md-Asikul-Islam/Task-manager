@@ -2,10 +2,10 @@ import React from "react";
 
 import TaskTable from "./TaskTable";
 
-function TaskList() {
+function TaskList({tasks}) {
   return (
     <div>
-      <TaskTable />
+      <TaskTable tasks={tasks} />
     </div>
   );
 }
