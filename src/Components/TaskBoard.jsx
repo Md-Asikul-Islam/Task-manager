@@ -38,13 +38,20 @@ function TaskBoard() {
    setTasks([...tasks])
   }
 
+  const handleFavorite = (taskId)=>{
+    const taskIndex = tasks.findIndex(task => task.id === taskId);
+    const newTasks = [...tasks];
+    newTasks[taskIndex].isFavorite = !newTasks[taskIndex].isFavorite ;
+    setTasks(newTasks)
+  }
+
   return (
     <div className="w-full max-w-[80rem] mx-auto p-4 sm:p-5 md:p-6 bg-[#1D212B] rounded-md border border-[#2A2F3A]">
       {showModal && <AddTaskModal onSave={handleAddTask} taskUpdate={taskUpdate} />}
       <div className="space-y-4">
         <SearchBar />
         <TaskAction onAddClick={() => setShowModal(true)} onDeleteAll={handleDeleteAllTask} />
-        <TaskList tasks={tasks} onEdit={handleEditTask} onDelete={handleDeleteTask} />
+        <TaskList tasks={tasks} onEdit={handleEditTask} onDelete={handleDeleteTask} onFav={handleFavorite} />
       </div>
     </div>
   );
