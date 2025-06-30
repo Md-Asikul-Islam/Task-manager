@@ -4,6 +4,7 @@ function TaskHeader() {
   return (
     <thead className="">
       <tr>
+        <th className="px-4 py-3 text-left text-xs sm:text-sm text-[#CBD5E1]"></th>
         <th className="px-2 py-2 text-[10px] sm:px-4 sm:text-sm whitespace-nowrap">Title</th>
         <th className="px-2 py-2 text-[10px] sm:px-4 sm:text-sm whitespace-nowrap">Description</th>
         <th className="px-2 py-2 text-[10px] sm:px-4 sm:text-sm whitespace-nowrap">Tags</th>

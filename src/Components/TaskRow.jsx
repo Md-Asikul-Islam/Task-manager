@@ -1,11 +1,11 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
-function TaskRow({ tasks, onEdit, onDelete, onFav }) {
+function TaskRow({ tasks, onEdit, onDelete, onFav}) {
   return (
     <>
       {tasks.map((task) => (
-        <tr key={task.id} className="bg-[#1F232B]">
+        <tr key={task.id} className="bg-[#1F232B] border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
           {/* Star */}
           <td className="px-2 py-3 sm:px-4 sm:py-4 align-top">
             <button onClick={() => onFav(task.id)}>
@@ -16,10 +16,16 @@ function TaskRow({ tasks, onEdit, onDelete, onFav }) {
               )}
             </button>
           </td>
+          {/* Title */}
+          <td className="px-2 py-3 sm:px-4 sm:py-4 align-top max-w-[180px] sm:max-w-xs">
+            <p className="text-xs sm:text-sm leading-snug break-words">
+              {task.title}
+            </p>
+          </td>
 
           {/* Description */}
-          <td className="px-2 py-3 sm:px-4 sm:py-4 align-top max-w-[200px] sm:max-w-xs">
-            <p className="text-xs sm:text-sm leading-snug">
+          <td className="px-2 py-3 sm:px-4 sm:py-4 align-top max-w-[200px] sm:max-w-sm">
+            <p className="text-xs sm:text-sm leading-snug break-words">
               {task.description}
             </p>
           </td>
@@ -45,7 +51,7 @@ function TaskRow({ tasks, onEdit, onDelete, onFav }) {
             </span>
           </td>
 
-          {/* Options */}
+          {/* Actions */}
           <td className="px-2 py-3 sm:px-4 sm:py-4 align-top">
             <div className="flex flex-col sm:flex-row gap-1 sm:gap-3">
               <button
