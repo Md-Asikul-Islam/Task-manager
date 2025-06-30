@@ -45,11 +45,16 @@ function TaskBoard() {
     setTasks(newTasks)
   }
 
+  const handleSeacrch = (searchTerm) => {
+  const filtered = tasks.filter((task) => task.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
+  setTasks([...filtered])
+  }
+
   return (
     <div className="w-full max-w-[80rem] mx-auto p-4 sm:p-5 md:p-6 bg-[#1D212B] rounded-md border border-[#2A2F3A]">
       {showModal && <AddTaskModal onSave={handleAddTask} taskUpdate={taskUpdate} />}
       <div className="space-y-4">
-        <SearchBar />
+        <SearchBar onSearch={handleSeacrch} />
         <TaskAction onAddClick={() => setShowModal(true)} onDeleteAll={handleDeleteAllTask} />
         <TaskList tasks={tasks} onEdit={handleEditTask} onDelete={handleDeleteTask} onFav={handleFavorite} />
       </div>
